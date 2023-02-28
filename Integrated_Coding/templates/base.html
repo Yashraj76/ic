@@ -65,8 +65,8 @@ a{
   color:#fff;
 }
 
-    </style>
-    <title>Integrated Coding | {% block title %}{% endblock %}</title>
+  </style>
+  <title>Integrated Coding | {% block title %}{% endblock %}</title>
 </head>
 <body>
   <header class="p-3 bg-dark text-white">
@@ -96,7 +96,7 @@ a{
         
         <div class="text-end">
           {% if user.is_authenticated %}
-          <a href="#" class="display-picture"><img src="https://i.pravatar.cc/85" alt=""></a>
+          <a href="#" class="display-picture"><img src="{{user.profile.image.url}}" alt=""></a>
           <div class="card hidden">
             <ul>
               <li><a href="{% url 'profile-page' %}"><button type="button" class="btn btn-info">Profile</button></a></li>
