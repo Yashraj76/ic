@@ -24,8 +24,8 @@ urlpatterns = [
     path('password-reset-complete',
         auth_views.PasswordResetCompleteView.as_view(template_name='index.html'),
         name='password_reset_complete'),
-    path('verification/', include('verify_email.urls')),	
-
+    path('verification/', include('verify_email.urls')),
+    path('password_change',auth_views.PasswordChangeView.as_view(template_name='change_password.html', success_url = 'home/'),name='change-password'),
 ]
  
 if settings.DEBUG:
