@@ -151,3 +151,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'yraj28289@gmail.com'
 EMAIL_HOST_PASSWORD = 'xkdiipyeqokkezul'
 DEFAULT_FROM_EMAIL = 'noreply<no_reply@domain.com>'
+
+# celery configuration
+
+CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
+CELERY_RESULT_BACKEND = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
