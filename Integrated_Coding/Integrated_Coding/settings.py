@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'contest',
     'crispy_forms',
     'verify_email.apps.VerifyEmailConfig',
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [

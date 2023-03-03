@@ -39,3 +39,16 @@ def edit_profile(request):
     else:
         form=EditProfileForm(instance=request.user.profile)
     return render(request,'edit_profile.html',{'form':form})
+
+def homepage(request):
+    if request.method=='POST':
+        form=UserRegisterForm(request.POST)
+        if form.is_valid():
+            inactive_user = send_verification_email(request, form)
+            username=form.cleaned_data.get('username')
+            messages.info(request,f'A mail is send to your registered mail id for verification')
+            return redirect('login')
+    else:
+        form=UserRegisterForm()
+    return render(request,'homepage.html',{'form':form})
+
