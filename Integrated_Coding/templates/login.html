@@ -3,7 +3,7 @@
 {% block title %}login{% endblock %}
 
 {% block content %}
-<style>
+    <style>
     .container{
       margin-top: 10px;
       margin-bottom: 10px;
@@ -35,7 +35,7 @@
   }
   
   form button:hover {
-    background:#fff !important;
+    background:#000000 !important;
   }
   
   .pull-right {
@@ -46,6 +46,15 @@
     background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  
     background: linear-gradient(to right, #ffd194, #70e1f5);
   }
+  .forget-password{
+    margin-top:5px;
+  }
+  a{
+    color: #ff0000;
+  }
+  a:hover{
+    color: white;
+  }
   </style>
 <div class="container">
     <form method="post">
@@ -54,8 +63,8 @@
           {%load crispy_forms_tags%}
           {{ form|crispy }}
       </div>
-    <button type="submit" style="margin-top: 2rem" class="btn btn-primary">Sign in</button><br>
-    <a style="color:black;" href="{% url 'reset_password' %}">Forgot Password</a>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+    <div class="forget-password">Forgot Password?  <a href="{% url 'reset_password' %}">Click here!</a></div>
     </form>
 </div>
 {% endblock %} 
