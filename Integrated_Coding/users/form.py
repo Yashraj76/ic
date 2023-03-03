@@ -15,5 +15,5 @@ class EditProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile 
-        fields = ['image']
+        fields = ['institute','yop','programme','cgpa','fullname','gender','city','state','contact','image']
         

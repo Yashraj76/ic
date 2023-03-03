@@ -3,16 +3,68 @@
 {% block title %}login{% endblock %}
 
 {% block content %}
-<center>
-<form method="post">
-    {% csrf_token %}
-    <div style="padding: 20px; width: 40rem;" class="form-group">
-        {%load crispy_forms_tags%}
-        {{form | crispy}}
-    
-    <button type="submit" style="margin-top: 2rem" class="btn btn-primary">Sign in</button><br>
-    <a style="color:black;" href="{% url 'reset_password' %}">Forgot Password</a>
+    <style>
+    .container{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    form {
+    min-width:300px;
+    max-width:400px;
+    padding:20px;
+    margin:0 auto;
+    background:#ffffff59; 
+    -webkit-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
+    -moz-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
+    box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
+  }
+  
+  form input {
+    border:1px solid #eee;
+    border-radius:0 !important;
+    padding:5px 8px;
+    color:#444;
+  }
+  
+  form button {
+    color:#555;
+    background:#ffffffad;
+    border:1px solid #fff !important;
+    margin-top:20px;
+    border-radius:0px Important;
+  }
+  
+  form button:hover {
+    background:#000000 !important;
+  }
+  
+  .pull-right {
+    float:right;
+  }
+  body {
+    background: #70e1f5;
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  
+    background: linear-gradient(to right, #ffd194, #70e1f5);
+  }
+  .forget-password{
+    margin-top:5px;
+  }
+  a{
+    color: #ff0000;
+  }
+  a:hover{
+    color: white;
+  }
+  </style>
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+      <div class="form-group">
+          {%load crispy_forms_tags%}
+          {{ form|crispy }}
+      </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+    <div class="forget-password">Forgot Password?  <a href="{% url 'reset_password' %}">Click here!</a></div>
+    </form>
 </div>
-</form>
-</center>
 {% endblock %} 

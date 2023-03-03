@@ -12,7 +12,9 @@
                 class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3">{{user.username}}</h5>
               <p class="text-muted mb-1">Computer Science</p>
-              <p class="text-muted mb-4">Silicon Institute of Technology</p>
+              <p class="text-muted mb-1">{{user.profile.institute}}</p>
+              <p class="text-muted mb-1">{{user.profile.programme}}</p>
+              <p class="text-muted mb-1">{{user.profile.yop}}</p>
               <div class="d-flex justify-content-center mb-2">
                 <a href="{% url 'edit-profile'%}"><button class="btn btn-primary">Edit profile</button></a>
               </div>
@@ -53,7 +55,7 @@
                   <p class="mb-0">Full Name</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{user.username}}</p>
+                  <p class="text-muted mb-0">{{user.profile.fullname}}</p>
                 </div>
               </div>
               <hr>
@@ -68,19 +70,19 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Phone</p>
+                  <p class="mb-0">Contact</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">(+91) 234-5678</p>
+                  <p class="text-muted mb-0">{{user.profile.contact}}</p>
                 </div>
               </div>
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Mobile</p>
+                  <p class="mb-0">Gender</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">(+91) 765-4321</p>
+                  <p class="text-muted mb-0">{{user.profile.gender}}</p>
                 </div>
               </div>
               <hr>
@@ -89,7 +91,7 @@
                   <p class="mb-0">Address</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">Bhubaneswar,Odisha</p>
+                  <p class="text-muted mb-0">{{user.profile.city}}, {{user.profile.state}}</p>
                 </div>
               </div>
             </div>
